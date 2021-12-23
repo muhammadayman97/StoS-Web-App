@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 from cv2 import KeyPoint, cv2
 import tensorflow as tf
 #from sklearn.model_selection import train_test_split
