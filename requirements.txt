@@ -1,6 +1,6 @@
 flask
 opencv-python
-tensorflow
+tensorflow-cpu
 mediapipe
 sklearn
 numpy 
