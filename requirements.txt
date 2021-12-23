@@ -5,4 +5,3 @@ mediapipe
 numpy 
 pandas
 gunicorn
-matplotlib==2.0.0
