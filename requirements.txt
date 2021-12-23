@@ -1,0 +1,7 @@
+flask
+opencv-python
+tensorflow
+mediapipe
+sklearn
+numpy 
+pandas
