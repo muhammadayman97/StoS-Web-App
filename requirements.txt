@@ -1,4 +1,4 @@
-python
+python==3.7.2
 flask
 opencv-python
 tensorflow==2.6
