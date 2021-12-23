@@ -1,6 +1,6 @@
 flask
 opencv-python
-tensorflow==2.6.0
+tensorflow-cpu
 mediapipe
 numpy 
 pandas
