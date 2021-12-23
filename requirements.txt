@@ -1,7 +1,6 @@
-python
 flask
 opencv-python
-tensorflow==2.6
+tensorflow
 mediapipe
 sklearn
 numpy 
