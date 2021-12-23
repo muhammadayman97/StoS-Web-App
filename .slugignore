@@ -3,3 +3,4 @@ pillow>=6.2.0
 kiwisolver>=1.0.1
 tensorboard-data-server<0.7.0,>=0.6.0
 libclang>=9.0.1
+matplotlib
