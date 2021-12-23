@@ -1,6 +1,6 @@
 flask
 opencv-python
-
+tensorflow==2.6
 mediapipe
 sklearn
 numpy 
