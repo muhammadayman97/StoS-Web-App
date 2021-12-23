@@ -23,7 +23,22 @@ from tensorflow.keras.callbacks import TensorBoard
 import mediapipe as mp
 import sys
 import os
+import pyttsx3
 
+
+def TTS_using_pyttsx3(text,gender='male',speed=175,volume=1):
+    engine = pyttsx3.init()
+    voices = engine.getProperty('voices')
+    if gender.lower() == 'male':
+        engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
+    else:
+        engine.setProperty('voice', voices[1].id)   #changing index, changes voices. 1 for female
+    engine.setProperty('rate', speed) ## speach speed 
+    engine.setProperty('volume',1.0)  # setting up volume level  between 0 and 1 (min=0 and max=1)
+    engine.say(text)    #put our text to process it 
+    # engine.save_to_file(text, 'output.mp3')   # incase want to save file
+    engine.runAndWait()  #speaking
+    
 
 def read_labels(path):
     names_list = os.listdir(path)
@@ -134,8 +149,8 @@ def start_stream(mp_holistic_model, holistic_model, mp_drawing, model, actions):
                     else:
                         sentence.append(actions[np.argmax(res)])
         
-        #print(sentence)
-
+            print(sentence)
+            TTS_using_pyttsx3(sentence,'1',190)
 
             ret, buffer = cv2.imencode('.jpg', image)
             im = buffer.tobytes()
