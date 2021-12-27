@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<center>
+<h2>submit text</h2>
+<div class="ml-container">
+
+		<form action="{{ url_for('submit_to_testing')}}" method="POST">
+		<p style="
+    color: #101010;
+    font-size: 14;
+    font-weight: 600;
+">Enter Job Discribtion Message Here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="6" cols="50" style="
+    width: 40%;
+    background-color: #eaeaea;
+    font-size: large;
+    font-style: normal;
+    font-family: sans-serif;
+    padding: 9px;
+"></textarea>
+		<br>
+
+		<input type="Submit" class="btn-info" value="Submit" style="
+    margin-top: 10px;
+    width: 12%;
+    font-size: larger;
+    padding: 5px;
+    color: #d9dada;
+    font-weight: bold;
+    background-color: #673ab7;
+    border-style: outset;
+">
+		
+	</form>
+		
+	</div>
+<input type="reset" value="Go back!" onclick="history.back()">
+</center> 
+</body>
+
+</html>
