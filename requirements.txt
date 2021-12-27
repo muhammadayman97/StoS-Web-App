@@ -10,4 +10,4 @@ pyttsx3
 moviepy
 ffmpeg
 flask
-speech_recognition
+SpeechRecognition
