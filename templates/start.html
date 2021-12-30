@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+  <html>
+    <head>
+      <title>Video in HTML</title>
+	  
+	  <style>
+	  
+	  
+			body{
+			margin: 0 ;
+			padding: 0;
+			
+				height: 100vh;
+				background-image: linear-gradient(to left , rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url({{ url_for('static', filename='3.png') }});
+				background-size: cover;
+				background-repeat: no-repeat;
+				
+				
+			}
+	  
+			input{
+				background-color: white;
+				color: black;
+				padding: 20px 30px;
+				font-size: 20px;
+				
+				border: 1px solid white;
+				margin-left: 10px;
+				transition: 1s;
+			}
+			
+			input:hover{
+				background-color: black;
+				color: white;
+				
+				border: 1px solid black;
+				cursor: pointer;
+			}
+			
+			.formsbtn{
+			
+				width: 50%;
+				
+				text-align: center;
+				margin:5px;
+				
+				position: absolute;
+				top: 70%;
+				left:50%;
+				transform: translate(-50% , -50%);
+				
+			
+			}
+			
+			form{
+			
+				display: inline-block;
+				margin-left: 20px;
+			}
+			
+	  
+	  </style>
+    
+    </head>
+    
+    <body> 
+    <center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--<font size="+10">Sign Language Translator</font>-->
+    <!--<font color = "gold" size = "+20">Sign Language Translator</font><br />-->
+        <img src="static\title_slt-.png" alt="slt logo" align="center" style="width:1200px;height:500px;">
+    
+	<div class="formsbtn">
+	<form method="POST" action="{{ url_for('Sign_to_Speech')}}">
+       <input type="submit" value="Sign to Speech"/>
+     </form>
+	 <form method="POST" action="{{ url_for('Speech_to_Sign')}}">
+       <input type="submit" value="Speech to Sign"/>
+     </form>
+	
+	</div>
+	
+     
+    
+    </center>
+    </body>
+    
+  </html>
