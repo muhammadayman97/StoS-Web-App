@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+  <html>
+    <head>
+      <title>Video in HTML</title>
+      <style>
+	  
+	  
+        body{
+        margin: 0 ;
+        padding: 0;
+        
+          height: 100vh;
+          background-image: linear-gradient(to left , rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url({{ url_for('static', filename='3.png') }});
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          
+        }
+      
+        input{
+          background-color: white;
+          color: black;
+          padding: 20px 30px;
+          font-size: 20px;
+          
+          border: 1px solid white;
+          margin-left: 10px;
+          transition: 1s;
+        }
+        
+        input:hover{
+          background-color: black;
+          color: white;
+          
+          border: 1px solid black;
+          cursor: pointer;
+        }
+        
+        .formsbtn{
+        
+          width: 50%;
+          
+          text-align: center;
+          margin:5px;
+          
+          position: absolute;
+          top: 70%;
+          left:50%;
+          transform: translate(-50% , -50%);
+          
+        
+        }
+        
+        form{
+        
+          display: inline-block;
+          margin-left: 20px;
+        }
+        
+      
+      </style>
+    </head>
+    
+    <body> 
+    <div class="formsbtn">
+     <form method="POST" action="{{ url_for('enter_text')}}">
+       <input type="submit" value="Enter text"/>
+     </form>
+     
+     <form method="POST" action="{{ url_for('enter_audio')}}">
+       <input type="submit" value="Enter audio"/>
+     </form>
+     
+    <a href="../" style="margin-left: 20px;"><input type="button" value="Back"/></a>
+    </div>
+    </body>
+    
+  </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+  <style>
+	  
+	  
+    body{
+    margin: 0 ;
+    padding: 0;
+    
+      height: 100vh;
+      background-image: linear-gradient(to left , rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url({{ url_for('static', filename='3.png') }});
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+      
+    }
+  
+    input{
+      background-color: white;
+      color: black;
+      padding: 20px 30px;
+      font-size: 20px;
+      
+      border: 1px solid white;
+      margin-left: 10px;
+      transition: 1s;
+    }
+    
+    input:hover{
+      background-color: black;
+      color: white;
+      
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    
+    .formsbtn{
+    
+      width: 50%;
+      
+      text-align: center;
+      margin:5px;
+      
+      position: absolute;
+      top: 70%;
+      left:50%;
+      transform: translate(-50% , -50%);
+      
+    
+    }
+    
+    form{
+    
+     
+    }
+    
+  
+  </style>
+
+<body>
+
+<center>
+<h2 style="color: white; font-size: 30px; text-transform: uppercase; margin: 30px;">submit text</h2>
+<div class="ml-container">
+
+		<form action="{{ url_for('submit_to_testing')}}" method="POST">
+		<p style="
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 75px;
+">Enter Job Discribtion Message Here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="3" cols="20" style="
+    width: 60%;
+    background-color: #eaeaea;
+    font-size: large;
+    font-style: normal;
+    font-family: sans-serif;
+    padding: 9px;
+    height: 400px;
+    margin-bottom: 40px;
+"></textarea>
+		<br>
+
+		<input type="Submit" class="btn-info" value="Submit" style="width: 20%;">
+		
+	</form>
+		
+	</div>
+  <br>
+  <br>
+  <br>
+<input type="reset" value="Go back!" onclick="history.back()">
+</center> 
+</body>
+
+</html>
