@@ -25,6 +25,24 @@ from stos.speech_to_sign.speech_to_sign import SpeechToSign
 
 
 #------------------------------------------------------------------------------------------------
+#download signs videos
+#------------------------------------------------------------------------------------------------
+def download_videos():
+    path=r'static\dataset'
+    download_file('https://drive.google.com/u/0/uc?id=12ERh3zdqjX3kAXJVXiIII3d8P-J544oW&export=download',os.path.join(path, 'videos_with_40_frames.zip'))
+    download_file('https://drive.google.com/u/0/uc?id=1Ry1Ra7XAuNjwSqInZfhrkPVKuDuCZ11F&export=download',os.path.join(path, 'videos with words.zip'))
+    print('2 files downloaded')
+    with ZipFile(os.path.join(path, 'videos_with_40_frames.zip'), 'r') as videos:
+        videos.extractall(path)
+        print('File videos_with_40_frames unziped')
+    with ZipFile(os.path.join(path, 'videos with words.zip'), 'r') as videos:
+        videos.extractall(path)
+        print('File videos with words unziped')
+    os.remove(path+r'\videos_with_40_frames.zip')
+    os.remove(path+r'\videos with words.zip')
+    print('zip files deleted')
+
+#------------------------------------------------------------------------------------------------
 #Sign to Speech
 #------------------------------------------------------------------------------------------------
 def start_stream():
@@ -234,7 +252,7 @@ def app3_testing():
             mimetype='multipart/x-mixed-replace; boundary=frame')
     
     
-    
+download_videos()    
 if __name__ == "__main__":
     app.run(debug=False)
     
