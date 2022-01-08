@@ -159,7 +159,7 @@ def speach_to_sign():
 		ret, buffer = cv2.imencode('.jpg', frame)
 		im = buffer.tobytes()
 		yield (b'--frame\r\n'
-				b'Content-Type: image/jpeg\r\n\r\n' + im + b'\r\n')	
+		       b'Content-Type: image/jpeg\r\n\r\n' + im + b'\r\n')	
 
 
 
