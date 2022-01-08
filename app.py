@@ -46,7 +46,7 @@ def start_stream():
 
 def add_words_to_videos(name):
     
-    video = cv2.VideoCapture(r"D:\New folder (3)\slt_test\static\dataset\videos_with_40_frames/{}.mp4".format(name))
+    video = cv2.VideoCapture(r"static\dataset\videos_with_40_frames/{}.mp4".format(name))
 
     # We need to check if camera
     # is opened previously or not
@@ -63,7 +63,7 @@ def add_words_to_videos(name):
     # Below VideoWriter object will create
     # a frame of above defined The output 
     # is stored in 'filename.mp4' file.
-    result = cv2.VideoWriter(r'D:\New folder (3)\slt_test\static\dataset\videos with words\{}.mp4'.format(name), 
+    result = cv2.VideoWriter(r'static\dataset\videos with words\{}.mp4'.format(name), 
                              cv2.VideoWriter_fourcc(*'MJPG'),
                              10, size)
 
@@ -98,7 +98,7 @@ def add_words_to_videos(name):
 
     print("The video was successfully saved")
     
-    return r'D:\New folder (3)\slt_test\static\dataset\videos with words\{}.mp4'.format(name)
+    return r'static\dataset\videos with words\{}.mp4'.format(name)
 
 
 def showing_videos(text):
@@ -122,15 +122,15 @@ def showing_videos(text):
 
     if len(videos_links)> 0:
         final_clip = concatenate_videoclips(videos_links) 
-        final_clip.write_videofile(r"C:\Users\ahmed\Desktop\my_concatenation.mp4") 
+        final_clip.write_videofile(r"static\dataset\videos with words\my_concatenation.mp4") 
     else:
-        final_clip = VideoFileClip(r"D:\New folder (3)\slt_test\static\dataset\videos with words\idk\0.mp4") 
-        final_clip.write_videofile(r"C:\Users\ahmed\Desktop\my_concatenation.mp4") 
+        final_clip = VideoFileClip(r"static\dataset\videos with words\idk\0.mp4") 
+        final_clip.write_videofile(r"static\dataset\videos with words\my_concatenation.mp4") 
         
         
         
         
-    cap = cv2.VideoCapture(r"C:\Users\ahmed\Desktop\my_concatenation.mp4")
+    cap = cv2.VideoCapture(r"static\dataset\videos with words\my_concatenation.mp4")
 
     while(cap.isOpened()):
 
