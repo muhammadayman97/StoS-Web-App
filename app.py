@@ -42,13 +42,13 @@ def download_videos():
     print('2 files downloaded')
     with ZipFile(os.path.join(path, 'videos_with_40_frames.zip'), 'r') as videos:
         videos.extractall(path)
-        print('File videos_with_40_frames unziped')
+        #print('File videos_with_40_frames unziped')
     with ZipFile(os.path.join(path, 'videos with words.zip'), 'r') as videos:
         videos.extractall(path)
-        print('File videos with words unziped')
+        #print('File videos with words unziped')
     os.remove(path+r'\videos_with_40_frames.zip')
     os.remove(path+r'\videos with words.zip')
-    print('zip files deleted')
+    #print('zip files deleted')
 
 #------------------------------------------------------------------------------------------------
 #Sign to Speech
