@@ -1,3 +1,4 @@
+stos
 pandas
 numpy
 opencv-python
