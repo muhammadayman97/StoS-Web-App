@@ -105,7 +105,7 @@ def showing_videos(text):
     listtttt = []  
     videos_links = []
     videos_with_words = []
-    all_words = ['age', 'book', 'call', 'car', 'day', 'egypt', 'English', 'Enjoy', 'every', 'Excuse', 'football', 'Forget', 'fun', 'Good', 'hate', 'have', 'hello', 'help', 'holiday', 'Iam', 'love', 'meet', 'month', 'morning', 'my', 'NA', 'name', 'Nice', 'no', 'not', 'number', 'okay', 'picture', 'play', 'read', 'ride', 'run', 'sorry', 'speak', 'sport', 'take', 'thanks', 'time', 'today', 'understand', 'what', 'when', 'where', 'year', 'yes', 'you', 'your']
+    all_words = ['age', 'book', 'call', 'car', 'day', 'egypt', 'English', 'Enjoy', 'every', 'Excuse', 'football', 'Forget', 'fun', 'Good', 'hate', 'have', 'hello', 'help', 'holiday', 'Iam', 'love', 'meet', 'month', 'morning', 'my', 'NA', 'name', 'Nice', 'no', 'not', 'number', 'okay', 'picture', 'play', 'read', 'ride', 'run', 'sorry', 'speak', 'sport', 'take', 'thanks', 'time', 'today', 'understand', 'what', 'when', 'where', 'year', 'yes', 'you', 'your','i']
     all_words = [x.lower() for x in all_words]
     for i in text.lower().split():
         if i in all_words:
