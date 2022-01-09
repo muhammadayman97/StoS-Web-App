@@ -39,7 +39,7 @@ def download_videos():
     path=r'static\dataset'
     download_file('https://drive.google.com/u/0/uc?id=12ERh3zdqjX3kAXJVXiIII3d8P-J544oW&export=download',os.path.join(path, 'videos_with_40_frames.zip'))
     download_file('https://drive.google.com/u/0/uc?id=1Ry1Ra7XAuNjwSqInZfhrkPVKuDuCZ11F&export=download',os.path.join(path, 'videos with words.zip'))
-    print('2 files downloaded')
+    #print('2 files downloaded')
     with ZipFile(os.path.join(path, 'videos_with_40_frames.zip'), 'r') as videos:
         videos.extractall(path)
         #print('File videos_with_40_frames unziped')
