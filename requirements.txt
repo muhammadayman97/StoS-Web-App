@@ -2,13 +2,9 @@ stos
 pandas
 numpy
 opencv-python
-tensorflow
-mediapipe
-sklearn
 numpy 
 pandas
-pyttsx3
 moviepy
 ffmpeg
 flask
-SpeechRecognition
+
