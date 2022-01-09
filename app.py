@@ -2,11 +2,13 @@
 from flask import Flask, render_template, Response
 #Initialize the Flask app
 app = Flask(__name__)
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from cv2 import KeyPoint, cv2
 import tensorflow as tf
+#from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Bidirectional, Dropout
@@ -14,15 +16,39 @@ from tensorflow.keras.callbacks import TensorBoard
 import mediapipe as mp
 import sys
 import os
+import os.path
+#import pyttsx3
 import time
 from moviepy.editor import VideoFileClip, concatenate_videoclips 
 from flask import Flask,render_template,url_for,request
 import speech_recognition as sr
 import threading
 import re
+from os.path import isfile, join
+from zipfile import ZipFile
+from os import listdir
+from stos.sign_to_speech.model_prepare import download_file
 from stos.sign_to_speech.sign_to_speech import SignToSpeech
 from stos.speech_to_sign.speech_to_sign import SpeechToSign
 
+
+#------------------------------------------------------------------------------------------------
+#download signs videos
+#------------------------------------------------------------------------------------------------
+def download_videos():
+    path=r'static\dataset'
+    download_file('https://drive.google.com/u/0/uc?id=12ERh3zdqjX3kAXJVXiIII3d8P-J544oW&export=download',os.path.join(path, 'videos_with_40_frames.zip'))
+    download_file('https://drive.google.com/u/0/uc?id=1Ry1Ra7XAuNjwSqInZfhrkPVKuDuCZ11F&export=download',os.path.join(path, 'videos with words.zip'))
+    print('2 files downloaded')
+    with ZipFile(os.path.join(path, 'videos_with_40_frames.zip'), 'r') as videos:
+        videos.extractall(path)
+        #print('File videos_with_40_frames unziped')
+    with ZipFile(os.path.join(path, 'videos with words.zip'), 'r') as videos:
+        videos.extractall(path)
+        #print('File videos with words unziped')
+    os.remove(path+r'\videos_with_40_frames.zip')
+    os.remove(path+r'\videos with words.zip')
+    #print('zip files deleted')
 
 #------------------------------------------------------------------------------------------------
 #Sign to Speech
@@ -234,7 +260,7 @@ def app3_testing():
             mimetype='multipart/x-mixed-replace; boundary=frame')
     
     
-    
+download_videos()    
 if __name__ == "__main__":
     app.run(debug=False)
     
