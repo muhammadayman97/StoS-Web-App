@@ -154,12 +154,12 @@ def showing_videos(text):
 #Speech to Sign (Audio Input)
 #------------------------------------------------------------------------------------------------
 def speach_to_sign():
-	sts = SpeechToSign(10)
-	for frame in sts.start_pipeline():
-		ret, buffer = cv2.imencode('.jpg', frame)
-		im = buffer.tobytes()
-		yield (b'--frame\r\n'
-		       b'Content-Type: image/jpeg\r\n\r\n' + im + b'\r\n')	
+    sts = SpeechToSign(10)
+    for frame in sts.start_pipeline():
+	ret, buffer = cv2.imencode('.jpg', frame)
+	im = buffer.tobytes()
+	yield (b'--frame\r\n'
+	       b'Content-Type: image/jpeg\r\n\r\n' + im + b'\r\n')	
 
 
 
