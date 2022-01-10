@@ -1,4 +1,4 @@
-#StoS Web App
+# StoS Web App
 
 This is the web deployment for stos library
 
