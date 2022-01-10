@@ -1,3 +1,5 @@
+#StoS Web App
+
 This is the web deployment for stos library
 
 To know more about the Library, check this link : https://github.com/azizmousa/sign_language_translator
