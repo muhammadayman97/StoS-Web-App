@@ -5,10 +5,8 @@ app = Flask(__name__)
 
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
 from cv2 import KeyPoint, cv2
 import tensorflow as tf
-#from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Bidirectional, Dropout
@@ -17,7 +15,6 @@ import mediapipe as mp
 import sys
 import os
 import os.path
-#import pyttsx3
 import time
 from moviepy.editor import VideoFileClip, concatenate_videoclips 
 from flask import Flask,render_template,url_for,request
