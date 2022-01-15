@@ -28,6 +28,7 @@ from stos.sign_to_speech.model_prepare import download_file
 from stos.sign_to_speech.sign_to_speech import SignToSpeech
 from stos.speech_to_sign.speech_to_sign import SpeechToSign
 
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 #------------------------------------------------------------------------------------------------
 #download signs videos
